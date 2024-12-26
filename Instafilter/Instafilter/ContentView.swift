@@ -13,6 +13,11 @@ struct ContentView: View {
     VStack {
       PhotosPicker("Select a picture", selection: $pickerItem, matching: .images)
     }
+    .onChange(of: pickerItem) {
+      Task {
+        selectedImage = try await pickerItem?.loadTransferable(type: Image.self)
+      }
+    }
   }
 }
 
