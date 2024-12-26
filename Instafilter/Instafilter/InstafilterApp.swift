@@ -1,17 +1,14 @@
 //
-//  InstafilterApp.swift
-//  Instafilter
-//
-//  Created by Juan Francisco Dorado Torres on 26/12/24.
+// Copyright © Juan Francisco Dorado Torres. All rights reserved.
 //
 
 import SwiftUI
 
 @main
 struct InstafilterApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  var body: some Scene {
+    WindowGroup {
+      ContentView()
     }
+  }
 }

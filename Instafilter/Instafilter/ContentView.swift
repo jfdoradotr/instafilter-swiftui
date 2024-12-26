@@ -1,24 +1,21 @@
 //
-//  ContentView.swift
-//  Instafilter
-//
-//  Created by Juan Francisco Dorado Torres on 26/12/24.
+// Copyright © Juan Francisco Dorado Torres. All rights reserved.
 //
 
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+  var body: some View {
+    VStack {
+      Image(systemName: "globe")
+        .imageScale(.large)
+        .foregroundStyle(.tint)
+      Text("Hello, world!")
     }
+    .padding()
+  }
 }
 
 #Preview {
-    ContentView()
+  ContentView()
 }
