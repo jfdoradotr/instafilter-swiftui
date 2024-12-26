@@ -2,6 +2,8 @@
 // Copyright © Juan Francisco Dorado Torres. All rights reserved.
 //
 
+import CoreImage
+import CoreImage.CIFilterBuiltins
 import PhotosUI
 import SwiftUI
 
@@ -9,6 +11,9 @@ struct ContentView: View {
   @State private var processedImage: Image?
   @State private var filterIntensity = 0.5
   @State private var selectedItem: PhotosPickerItem?
+
+  @State private var currentFilter = CIFilter.sepiaTone()
+  private let context = CIContext()
 
   var body: some View {
     NavigationStack {
