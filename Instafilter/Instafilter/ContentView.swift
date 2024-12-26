@@ -28,6 +28,7 @@ struct ContentView: View {
           }
         }
         .buttonStyle(.plain)
+        .onChange(of: selectedItem, loadImage)
         Spacer()
         HStack {
           Text("Intensity")
