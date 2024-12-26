@@ -8,9 +8,11 @@ import SwiftUI
 struct ContentView: View {
   @State private var pickerItem: PhotosPickerItem?
   @State private var selectedImage: Image?
-  
+
   var body: some View {
-    Text("Hello")
+    VStack {
+      PhotosPicker("Select a picture", selection: $pickerItem, matching: .images)
+    }
   }
 }
 
