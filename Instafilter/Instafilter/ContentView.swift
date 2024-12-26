@@ -6,7 +6,7 @@ import SwiftUI
 
 struct ContentView: View {
   var body: some View {
-    ShareLink(item: URL(string: "https://swiftyjourney.com")!)
+    ShareLink(item: URL(string: "https://swiftyjourney.com")!, subject: Text("Learn Swift here"), message: Text("Swift Journey"))
   }
 }
 
