@@ -27,6 +27,7 @@ struct ContentView: View {
             )
           }
         }
+        .buttonStyle(.plain)
         Spacer()
         HStack {
           Text("Intensity")
