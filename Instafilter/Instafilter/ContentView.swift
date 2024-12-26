@@ -28,15 +28,17 @@ struct ContentView: View {
         Slider(value: $filterIntensity)
       }
       HStack {
-        Button("Change Filter") {
-
-        }
+        Button("Change Filter", action: changeFilter)
         Spacer()
         // share the picture
       }
     }
     .padding([.horizontal, .bottom])
     .navigationTitle("Instafilter")
+  }
+
+  private func changeFilter() {
+
   }
 }
 
