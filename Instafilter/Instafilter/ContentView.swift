@@ -20,6 +20,10 @@ struct ContentView: View {
   @AppStorage("filterCount") var filterCount = 0
   @Environment(\.requestReview) var requestReview
 
+  private var isDisabled: Bool {
+    processedImage == nil
+  }
+
   var body: some View {
     NavigationStack {
       VStack {
@@ -45,8 +49,11 @@ struct ContentView: View {
           Slider(value: $filterIntensity)
             .onChange(of: filterIntensity, applyProcessing)
         }
+        .opacity(isDisabled ? 0.5 : 1)
+        .disabled(isDisabled)
         HStack {
           Button("Change Filter", action: changeFilter)
+            .disabled(isDisabled)
           Spacer()
           if let processedImage {
             ShareLink(item: processedImage, preview: SharePreview("Instafilter image", image: processedImage))
