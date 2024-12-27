@@ -13,7 +13,7 @@ struct ContentView: View {
   @State private var selectedItem: PhotosPickerItem?
   @State private var showingFilters = false
 
-  @State private var currentFilter = CIFilter.sepiaTone()
+  @State private var currentFilter: CIFilter = CIFilter.sepiaTone()
   private let context = CIContext()
 
   var body: some View {
@@ -71,7 +71,8 @@ struct ContentView: View {
   }
 
   private func applyProcessing() {
-    currentFilter.intensity = Float(filterIntensity)
+    currentFilter.setValue(filterIntensity, forKey: kCIInputIntensityKey)
+
     guard let outputImage = currentFilter.outputImage else { return }
     guard let cgImage = context.createCGImage(outputImage, from: outputImage.extent) else { return }
 
