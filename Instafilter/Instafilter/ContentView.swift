@@ -50,13 +50,20 @@ struct ContentView: View {
       .padding([.horizontal, .bottom])
       .navigationTitle("Instafilter")
       .confirmationDialog("Select a filter", isPresented: $showingFilters) {
-        // dialog here
+        Button("Crystallize") { setFilter(.crystallize()) }
+        Button("Edges") { setFilter(.edges()) }
+        Button("Gaussian Blur") { setFilter(.gaussianBlur()) }
+        Button("Pixellate") { setFilter(.pixellate()) }
+        Button("Sepia Tone") { setFilter(.sepiaTone()) }
+        Button("Unsharp Mask") { setFilter(.unsharpMask()) }
+        Button("Vignette") { setFilter(.vignette()) }
+        Button("Cancel", role: .cancel) { }
       }
     }
   }
 
   private func changeFilter() {
-
+    showingFilters = true
   }
 
   private func loadImage() {
@@ -78,6 +85,11 @@ struct ContentView: View {
 
     let uiImage = UIImage(cgImage: cgImage)
     processedImage = Image(uiImage: uiImage)
+  }
+
+  private func setFilter(_ filter: CIFilter) {
+    currentFilter = filter
+    loadImage()
   }
 }
 
