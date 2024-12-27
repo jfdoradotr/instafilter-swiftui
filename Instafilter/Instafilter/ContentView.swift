@@ -100,6 +100,11 @@ struct ContentView: View {
   private func setFilter(_ filter: CIFilter) {
     currentFilter = filter
     loadImage()
+
+    filterCount += 1
+    if filterCount >= 20 {
+      requestReview()
+    }
   }
 }
 
