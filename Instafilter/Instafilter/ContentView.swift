@@ -44,7 +44,9 @@ struct ContentView: View {
         HStack {
           Button("Change Filter", action: changeFilter)
           Spacer()
-          // share the picture
+          if let processedImage {
+            ShareLink(item: processedImage, preview: SharePreview("Instafilter image", image: processedImage))
+          }
         }
       }
       .padding([.horizontal, .bottom])
