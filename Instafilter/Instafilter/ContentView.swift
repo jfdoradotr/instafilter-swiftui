@@ -70,14 +70,14 @@ struct ContentView: View {
             HStack {
               Text("Radius")
               Slider(value: $filterRadius)
-                .onChange(of: filterIntensity, applyProcessing)
+                .onChange(of: filterRadius, applyProcessing)
             }
           }
           if isScale {
             HStack {
               Text("Scale")
               Slider(value: $filterScale)
-                .onChange(of: filterIntensity, applyProcessing)
+                .onChange(of: filterScale, applyProcessing)
             }
           }
         }
@@ -95,6 +95,9 @@ struct ContentView: View {
       .padding([.horizontal, .bottom])
       .navigationTitle("Instafilter")
       .confirmationDialog("Select a filter", isPresented: $showingFilters) {
+        Button("Bloom") { setFilter(.bloom()) }
+        Button("Color Invert") { setFilter(.colorInvert()) }
+        Button("Comic Effect") { setFilter(.comicEffect()) }
         Button("Crystallize") { setFilter(.crystallize()) }
         Button("Edges") { setFilter(.edges()) }
         Button("Gaussian Blur") { setFilter(.gaussianBlur()) }
